@@ -91,7 +91,7 @@ def handle_dialog(res, req):
                 res['response']['text'] = 'Ну и ладно!'
                 res['end_session'] = True
             elif req['request']['original_utterance'].lower() == 'помощь':
-                req['response']['text'] = 'Это текст помощи. Будь смелее и продолжи общение!'
+                res['response']['text'] = 'Это текст помощи. Будь смелее и продолжи общение!'
             else:
                 res['response']['text'] = 'Не поняла ответа! Так да или нет?'
                 res['response']['buttons'] = [
@@ -109,7 +109,7 @@ def handle_dialog(res, req):
                     }
                 ]
         elif req['request']['original_utterance'].lower() == 'помощь':
-            req['response']['text'] = 'Это текст помощи. Будь смелее и продолжи общение.'
+            res['response']['text'] = 'Это текст помощи. Будь смелее и продолжи общение.'
         else:
             play_game(res, req)
 
